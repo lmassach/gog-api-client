@@ -15,8 +15,10 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with gog-api-client. If not, see <https://www.gnu.org/licenses/>.
+import json
 import os
 import pprint
+import requests
 
 __all__ = [
     'FGR', 'FGY', 'FGC', 'RST', 'GCA_DIR', 'AUTH_FILE', 'CLIENT_ID',
@@ -40,3 +42,12 @@ def cpprint(*args, color=FGC, **kwargs):
     print(color, end='')
     pprint.pprint(*args, **kwargs)
     print(RST, end='')
+
+
+def get_session(*args, **kwargs):
+    print("Reading authentication data...")
+    with open(AUTH_FILE) as ifs:
+        data = json.load(ifs)
+    s = requests.Session(*args, **kwargs)
+    s.headers.update({'Authorization': f'Bearer {data["access_token"]}'})
+    return s
