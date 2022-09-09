@@ -1,5 +1,21 @@
 #!/usr/bin/env python3
 """Refresh token after authenticating."""
+# Copyright 2022 Ludovico Massaccesi
+#
+# This file is part of gog-api-client.
+#
+# gog-api-client is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or (at
+# your option) any later version.
+#
+# gog-api-client is distributed in the hope that it will be useful, but
+# WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+# General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with gog-api-client. If not, see <https://www.gnu.org/licenses/>.
 import json
 import os
 from pprint import pprint
