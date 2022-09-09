@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""List products."""
+"""Product extended info."""
 # Copyright 2022 Ludovico Massaccesi
 #
 # This file is part of gog-api-client.
@@ -17,29 +17,15 @@
 # You should have received a copy of the GNU General Public License
 # along with gog-api-client. If not, see <https://www.gnu.org/licenses/>.
 import argparse
+from pprint import pprint
 from common import *
 
 parser = argparse.ArgumentParser(description=__doc__)
-parser.add_argument("search_query", help="Search string")
-parser.add_argument("-u", "--user", action="store_true",
-                    help="Search user-owned only.")
-parser.add_argument("-a", "--all", action="store_true",
-                    help="Prints all available information.")
-parser.add_argument("--media-type", default='game', choices=['game', 'movie'])
+parser.add_argument("id", type=int, help="Product numeric ID, given by list.")
 args = parser.parse_args()
-url = 'https://embed.gog.com/' + (
-    'account/getFilteredProducts' if args.user else 'games/ajax/filtered')
-media_type = int(args.media_type == 'movie') + 1 if args.user else args.media_type
 
 s = get_session()
-r = s.get(url, params={'search': args.search_query, 'mediaType': media_type})
+r = s.get(f'https://api.gog.com/products/{args.id}', params={
+    'expand': 'downloads,expanded_dlcs'})
 r.raise_for_status()
-data = r.json()
-products = data['products']
-
-print(f"Showing page 1 of {data['totalPages']}, {len(products)} results.")
-if args.all:
-    cpprint(data)
-else:
-    for p in products:
-        print(f"{p['title']}\n    {p['url']}\n    {p['id']}")
+pprint(r.json())

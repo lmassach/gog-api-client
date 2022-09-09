@@ -12,6 +12,9 @@ Python 3 (probably 3.6+) with [requests](https://requests.readthedocs.io/).
 See [here](https://gogapidocs.readthedocs.io/).
  - Authenticate with `./authenticate.py`. Will save credentials in plain text in `auth.json`.
     - Use `./refresh.py` if the token has elapsed to renew it without re-authenticating.
+ - Use `./list.py` to find products (see `--help` for details).
+    - This will also retrieve the numeric IDs used by the following scripts.
+ - Use `./info.py` to get extra product details (mainly for developing).
 
 ## License
 Copyright 2022 Ludovico Massaccesi.

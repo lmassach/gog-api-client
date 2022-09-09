@@ -22,7 +22,7 @@ import requests
 
 __all__ = [
     'FGR', 'FGY', 'FGC', 'RST', 'GCA_DIR', 'AUTH_FILE', 'CLIENT_ID',
-    'CLIENT_SECRET', 'REDIRECT_URI', 'cpprint']
+    'CLIENT_SECRET', 'REDIRECT_URI', 'cpprint', 'get_session']
 
 FGR = '\x1b[31m'
 FGY = '\x1b[33m'
