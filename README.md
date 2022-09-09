@@ -6,15 +6,20 @@ seems to be unable to download some extra contents of
 [Hollow Knight](https://www.gog.com/game/hollow_knight) that I just bought.
 
 ## Requirements
-Python 3 (probably 3.6+) with [requests](https://requests.readthedocs.io/).
+Python 3 (probably 3.6+) with [requests](https://requests.readthedocs.io/) and
+[tqdm](https://tqdm.github.io/).
 
 ## Usage
 See [here](https://gogapidocs.readthedocs.io/).
  - Authenticate with `./authenticate.py`. Will save credentials in plain text in `auth.json`.
     - Use `./refresh.py` if the token has elapsed to renew it without re-authenticating.
- - Use `./list.py` to find products (see `--help` for details).
+ - Use `./list.py` to find products.
     - This will also retrieve the numeric IDs used by the following scripts.
+    - See `--help` for details
  - Use `./info.py` to get extra product details (mainly for developing).
+    - See `--help` for details
+ - Use `./download.py` to download product data (somewhat interactively).
+    - See `--help` for details
 
 ## License
 Copyright 2022 Ludovico Massaccesi.
