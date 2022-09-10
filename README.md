@@ -10,7 +10,6 @@ Python 3 (probably 3.6+) with [requests](https://requests.readthedocs.io/) and
 [tqdm](https://tqdm.github.io/).
 
 ## Usage
-See [here](https://gogapidocs.readthedocs.io/).
  - Authenticate with `./authenticate.py`. Will save credentials in plain text in `auth.json`.
     - Use `./refresh.py` if the token has elapsed to renew it without re-authenticating.
  - Use `./list.py` to find products.
@@ -22,6 +21,9 @@ See [here](https://gogapidocs.readthedocs.io/).
     - It will query all the available downloads for the product and its extras (DLCs, patches,
       installers, etc), then display a list and ask which you want to download.
     - See `--help` for details.
+
+## References
+The [unofficial GOG API documentation](https://gogapidocs.readthedocs.io/).
 
 ## License
 Copyright 2022 Ludovico Massaccesi.
