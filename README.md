@@ -15,11 +15,13 @@ See [here](https://gogapidocs.readthedocs.io/).
     - Use `./refresh.py` if the token has elapsed to renew it without re-authenticating.
  - Use `./list.py` to find products.
     - This will also retrieve the numeric IDs used by the following scripts.
-    - See `--help` for details
+    - See `--help` for details.
  - Use `./info.py` to get extra product details (mainly for developing).
-    - See `--help` for details
- - Use `./download.py` to download product data (somewhat interactively).
-    - See `--help` for details
+    - See `--help` for details.
+ - Use `./download.py` to download product data.
+    - It will query all the available downloads for the product and its extras (DLCs, patches,
+      installers, etc), then display a list and ask which you want to download.
+    - See `--help` for details.
 
 ## License
 Copyright 2022 Ludovico Massaccesi.
